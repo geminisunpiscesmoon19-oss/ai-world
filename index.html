@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The World</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0b0d12;
+      color: #f1f1f1;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 25px 15px 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .subtitle {
+      color: #8f96a3;
+      margin-top: 8px;
+    }
+
+    .world {
+      position: relative;
+      max-width: 700px;
+      height: 600px;
+      margin: 20px auto;
+      border: 2px solid #303642;
+      border-radius: 20px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 30% 25%, #263328 0 8%, transparent 9%),
+        radial-gradient(circle at 75% 65%, #263328 0 10%, transparent 11%),
+        linear-gradient(#111923, #0c1510);
+    }
+
+    .location {
+      position: absolute;
+      min-width: 120px;
+      padding: 14px 10px;
+      border: 1px solid #596170;
+      border-radius: 14px;
+      background: #181d27;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.15s, background 0.15s;
+    }
+
+    .location:hover,
+    .location:active {
+      transform: scale(1.05);
+      background: #242b38;
+    }
+
+    .forest {
+      top: 45px;
+      left: 40px;
+    }
+
+    .town {
+      top: 190px;
+      left: 245px;
+    }
+
+    .lab {
+      top: 330px;
+      left: 245px;
+    }
+
+    .cafe {
+      top: 190px;
+      right: 35px;
+    }
+
+    .ai {
+      bottom: 55px;
+      left: 55px;
+    }
+
+    .factory {
+      bottom: 35px;
+      right: 30px;
+      border-color: #a22;
+      background: #211
