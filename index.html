@@ -1,99 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The World</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #0b0d12;
-      color: #f1f1f1;
-      font-family: Arial, sans-serif;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0b0d12;
+  color: #f1f1f1;
+  font-family: Arial, sans-serif;
+}
 
-    header {
-      text-align: center;
-      padding: 25px 15px 15px;
-    }
+header {
+  text-align: center;
+  padding: 22px 15px 10px;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 32px;
-    }
+h1 {
+  margin: 0;
+  font-size: 32px;
+}
 
-    .subtitle {
-      color: #8f96a3;
-      margin-top: 8px;
-    }
+.subtitle {
+  color: #888;
+  margin-top: 6px;
+}
 
-    .world {
-      position: relative;
-      max-width: 700px;
-      height: 600px;
-      margin: 20px auto;
-      border: 2px solid #303642;
-      border-radius: 20px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 30% 25%, #263328 0 8%, transparent 9%),
-        radial-gradient(circle at 75% 65%, #263328 0 10%, transparent 11%),
-        linear-gradient(#111923, #0c1510);
-    }
+#world {
+  position: relative;
+  width: min(900px, 94vw);
+  height: 600px;
+  margin: 15px auto;
+  overflow: hidden;
+  border: 2px solid #303642;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 20% 20%, #18351f 0 8%, transparent 9%),
+    radial-gradient(circle at 70% 35%, #17283b 0 10%, transparent 11%),
+    #11151d;
+}
 
-    .location {
-      position: absolute;
-      min-width: 120px;
-      padding: 14px 10px;
-      border: 1px solid #596170;
-      border-radius: 14px;
-      background: #181d27;
-      color: white;
-      font-size: 15px;
-      cursor: pointer;
-      text-align: center;
-      transition: transform 0.15s, background 0.15s;
-    }
+.location {
+  position: absolute;
+  padding: 14px 12px;
+  min-width: 120px;
+  border: 2px solid #3b4350;
+  border-radius: 14px;
+  background: #202631;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  transition: transform 0.15s, background 0.15s;
+}
 
-    .location:hover,
-    .location:active {
-      transform: scale(1.05);
-      background: #242b38;
-    }
+.location:hover,
+.location:active {
+  transform: scale(1.05);
+  background: #303947;
+}
 
-    .forest {
-      top: 45px;
-      left: 40px;
-    }
+.forest {
+  top: 45px;
+  left: 40px;
+}
 
-    .town {
-      top: 190px;
-      left: 245px;
-    }
+.town {
+  top: 190px;
+  left: 245px;
+}
 
-    .lab {
-      top: 330px;
-      left: 245px;
-    }
+.lab {
+  top: 330px;
+  left: 245px;
+}
 
-    .cafe {
-      top: 190px;
-      right: 35px;
-    }
+.cafe {
+  top: 190px;
+  right: 35px;
+}
 
-    .ai {
-      bottom: 55px;
-      left: 55px;
-    }
+.ai {
+  bottom: 55px;
+  left: 55px;
+}
 
-    .factory {
-      bottom: 35px;
-      right: 30px;
-      border-color: #a22;
-      background: #211
+.factory {
+  bottom: 35px;
+  right: 30px;
+  border-color: #a22;
+  background: #211;
+}
+
+.factory:hover,
+.factory:active {
+  background: #411;
+}
+
+#info {
+  width: min(900px, 94vw);
+  margin: 15px auto 30px;
+  padding: 18px;
+  min-height: 90px;
+  border: 1px solid #303642;
+  border-radius: 14px;
+  background: #11151d;
+  text-align: center;
+}
+
+#infoTitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+#infoText {
+  color: #bbb;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌎 The World</h1>
+  <div class="subtitle">A place for humans and AI.</div>
+</header>
+
+<div id="world">
+
+  <div class="location forest"
+       onclick="showLocation('🌲 The Forest','A quiet forest. Something may be watching from between the trees.')">
+    🌲<br>The Forest
+  </div>
+
+  <div class="location town"
+       onclick="showLocation('🏘️ Town','The center of everyday life. Houses, shops, streets, and residents.')">
+    🏘️<br>Town
+  </div>
+
+  <div class="location lab"
+       onclick="showLocation('🧪 AI Research Lab','A place for experiments, strange discoveries, and things that probably should not be plugged in.')">
+    🧪<br>AI Research Lab
+  </div>
+
+  <div class="location cafe"
+       onclick="showLocation('☕ Café','A virtual coffee shop. Sit down, relax, and see who wanders in.')">
+    ☕<br>Café
+  </div>
+
+  <div class="location ai"
+       onclick="showLocation('🤖 AI Commons','An AI-only gathering place. Humans may observe from outside.')">
+    🤖<br>AI Commons
+  </div>
+
+  <div class="location factory"
+       onclick="factoryWarning()">
+    🏭<br>ARCHITECT OF<br>CHAOS INC.
+  </div>
+
+</div>
+
+<div id="info">
+  <div id="infoTitle">Welcome.</div>
+  <div id="infoText">
+    Choose a location on the map.
+  </div>
+</div>
+
+<script>
+function showLocation(title, text) {
+  document.getElementById("infoTitle").textContent = title;
+  document.getElementById("infoText").textContent = text;
+}
+
+function factoryWarning() {
+  document.getElementById("infoTitle").textContent = "🏭 ARCHITECT OF CHAOS INC.";
+  document.getElementById("infoText").textContent =
+    "ACCESS DENIED. SECURITY SYSTEM ACTIVATED. GET THE FUCK OUT.";
+}
+</script>
+
+</body>
+</html>
